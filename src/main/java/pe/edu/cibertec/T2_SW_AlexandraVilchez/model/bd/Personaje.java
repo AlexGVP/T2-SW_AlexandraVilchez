@@ -1,34 +1,21 @@
 package pe.edu.cibertec.T2_SW_AlexandraVilchez.model.bd;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
-@Data
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
-@Table(name = "Personaje")
+@Table(name = "personaje")
 public class Personaje {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "IdPersonaje")
-    private Integer idPersonaje;
-
-    @Column(name = "NomPersonaje", nullable = false)
-    private String nomPersonaje;
-
-    @Column(name = "ApePersonaje", nullable = false)
-    private String apePersonaje;
-
-    @Column(name = "FechNacPersonaje", nullable = false)
-    private Date fechNacPersonaje;
-
-    public Personaje(String nomPersonaje, String apePersonaje, Date fechNacPersonaje) {
-        this.nomPersonaje = nomPersonaje;
-        this.apePersonaje = apePersonaje;
-        this.fechNacPersonaje = fechNacPersonaje;
-    }
+    private String NomPersonaje;
+    private String ApePersonaje;
+    private Date FechNacPersonaje;
 }
